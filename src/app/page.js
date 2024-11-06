@@ -157,7 +157,7 @@ Learn more
         <div className="lg:grid grid-cols-12 gap-4 lg:mb-12">
           <div className="col-span-4"><span className="text-gray-500">Services</span></div>
           <div className="col-span-8">
-              <h2 className="font-heading mt-4 lg:mt-0 dot-end  mb-6 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">We Handle the Planning, Systems, and Marketing, So You Can Focus on What’s Next</h2>
+              <h2 className="font-heading mt-4 lg:mt-0 dot-end text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">We Handle the Planning, Systems, and Marketing, So You Can Focus on What’s Next</h2>
             </div>
         </div>
         <div className="lg:grid grid-cols-3 gap-4 py-10 border-b">
@@ -246,8 +246,8 @@ Learn more
       <section id="ourteam" className="flex flex-col justify-center md:py-20 py-12 border-b">
       <div className="lg:grid grid-cols-3 gap-16">
         <span className="text-gray-500">Our Team</span>
-        <div className="col-span-2">
-          <h2 className="font-heading  dot-end mb-16 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+        <div className="col-span-2 md:mt-0 mt-3">
+          <h2 className="font-heading  dot-end md:mb-16 mb-10 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
             We consist of marketing specialists, tech innovators, sales executives, and construction professionals who consistently deliver outstanding results for our clients
           </h2>
           <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 lg:gap-10 mb-16">

@@ -17,6 +17,19 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link
+  rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Red+Hat+Display:wght@600&display=swap"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Red+Hat+Display:wght@600&display=swap"
+  />
+</noscript>
+
         
         {/* Viewport Meta Tag for Responsive Design */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +43,7 @@ export default function RootLayout({ children }) {
            {/* Contact Section */}
       <section
         id="contacts"
-        className="md:px-8 px-4 shadow-md mb-8 bg-white rounded-b-3xl flex flex-col justify-center md:py-20 py-12 border-b"
+        className="md:px-8 px-4 shadow-md bg-white rounded-b-3xl flex flex-col justify-center md:py-20 py-12 border-b"
       >
         <div className="lg:grid grid-cols-3 gap-20">
           <div className="mb-16 lg:mb-0">

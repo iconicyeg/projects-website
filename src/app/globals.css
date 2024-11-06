@@ -93,11 +93,27 @@ ol li {
 ol {
   color: #333333;
 }
-.post-content h3 {
-  font-family: var(--font-red-hat), sans-serif;
-  font-size: 28px;
+.post-content h2 {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 22px;
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.post-content h3 {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.post-content h4 {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 500;
   margin-bottom: 18px;
 }
 
@@ -188,6 +204,6 @@ padding-left: 18px;
       bottom: 6px;
   }
   .navigation-active main {
-    padding: 0 24px;
+    padding: 0 16px;
     }
 }

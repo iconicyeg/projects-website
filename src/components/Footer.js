@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <>
       {/* Footer Section */}
-      <footer className="py-14 px-8">
+      <footer className="md:py-14 md:px-8 px-4 py-10">
         <div className="lg:grid grid-cols-3">
           {/* Logo */}
           <div className="mb-4 lg:mb-0">
