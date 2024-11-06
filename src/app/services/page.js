@@ -155,12 +155,12 @@ export default function ServicesPage() {
               <span className="text-gray-500">Services</span>
             </div>
             <div className="col-span-8">
-              <h2 className="font-heading dot-end mt-3 lg: mt-0 mb-6 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+              <h1 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium ">
                 Tailored strategies that comprehend the Edmonton market landscape paired with insightful analyses set the stage for your property&apos;s success
-              </h2>
-              <h3 className="md:text-2xl text-md font-medium mb-8">
+              </h1>
+              <h2 className="md:text-2xl text-md mb-8">
                 Each project is more than a building; it&apos;s an opportunity to shape how people live and engage with their environment.
-              </h3>
+              </h2>
   
               <ServicesAccordion services={services} />
             </div>
@@ -171,7 +171,7 @@ export default function ServicesPage() {
           <div className="lg:grid grid-cols-3 gap-4 border-b pb-20">
             <span className="text-gray-500">About us</span>
             <div className="col-span-2">
-              <h2 className="font-heading dot-end mb-6 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+              <h2 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
                 Who We Are and What Drives Us - The Vision Behind Our Success
               </h2>
               <div className="relative w-full mb-6 h-0 pb-[56.25%]">

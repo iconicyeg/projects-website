@@ -22,7 +22,7 @@ export default function Header() {
   }, [navOpen]);
 
   return (
-    <header className={`md:py-5 md:px-8  px-4 py-3 transition-all duration-200 ${navOpen ? '' : 'bg-white'}`}>
+    <header className={`md:py-5 md:px-8  px-4 py-4 transition-all duration-200 ${navOpen ? '' : 'bg-white'}`}>
       <div className="max-w-screen-2xl mx-auto">
         <div className="w-full mx-auto flex items-center justify-between">
           {/* Logo */}
@@ -55,7 +55,7 @@ export default function Header() {
                 </p>
 
                 {/* Navigation Links */}
-                <nav className="flex flex-col text-black text-3xl gap-6">
+                <nav className="font-heading flex flex-col text-black text-3xl gap-6">
                   <Link href="/services" className="m-0 hover:underline">
                     Services
                   </Link>

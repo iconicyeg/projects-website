@@ -77,7 +77,7 @@ export default async function HomePage() {
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
       <section id="hero" className="flex flex-col justify-center md:py-20 py-12 border-b">
-        <h1 className="font-heading text-2xl lg:text-6xl font-medium text-gray-900 mb-6 leading-tight dot-end">
+        <h1 className="text-3xl lg:text-6xl font-medium text-gray-900 mb-6 leading-tight dot-end">
           Discover your project&apos;s potential and redefine the standards of industry expectations
         </h1>
         <div className="lg:flex gap-8 items-center">
@@ -95,15 +95,15 @@ export default async function HomePage() {
       </section>
 
       <section id="projects" className="flex flex-col justify-center md:py-20 py-12 border-b">
-        <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-8 dot-end">Projects</h2>
+        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-6 md:mb-8 dot-end">Projects</h2>
         <ProjectCarousel />
       </section>
       
       <section id="aboutus" className="flex flex-col justify-center md:py-20 py-12 border-b">
         <div className="lg:grid grid-cols-3 gap-4">
   <span className="text-gray-500">About us</span>
-  <div className="col-span-2 lg:mt-0 mt-4">
-    <h2 className="font-heading dot-end  mb-6 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">Who We Are and What Drives Us - The Vision Behind Our Success</h2>
+  <div className="col-span-2 lg:mt-0 mt-2">
+    <h2 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">Who We Are and What Drives Us - The Vision Behind Our Success</h2>
     <div className="md:grid flex flex-col grid-cols-2 gap-4 mb-6">
       {/* Video */}
       <div className="relative w-full h-0 pb-[56.25%]">
@@ -157,41 +157,41 @@ Learn more
         <div className="lg:grid grid-cols-12 gap-4 lg:mb-12">
           <div className="col-span-4"><span className="text-gray-500">Services</span></div>
           <div className="col-span-8">
-              <h2 className="font-heading mt-4 lg:mt-0 dot-end text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">We Handle the Planning, Systems, and Marketing, So You Can Focus on What’s Next</h2>
+              <h2 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">We Handle the Planning, Systems, and Marketing, So You Can Focus on What’s Next</h2>
             </div>
         </div>
         <div className="lg:grid grid-cols-3 gap-4 py-10 border-b">
-        <span className="text-gray-900 lg:mr-0 mr-2">(1)</span>
-          <span className="text-gray-900">
+        <span className="md:text-md text-xl font-bold md:font-medium text-gray-900 lg:mr-0 mr-2">(1)</span>
+          <span className="md:text-md text-xl font-bold md:font-medium text-gray-900">
           Preparation Consulting</span>
           <p className="text-gray-500 lg:mt-0 mt-3">
           From Sales Forecasting and Marketing Schedules to Competitor and Consumer Behaviour Analysis, you get comprehensive coverage. Data-Driven Pricing Strategies help optimize profits. You also benefit from lease office setup, staging coordination, tour strategies, sales training, suite release planning, and project website development.
           </p>
         </div>
         <div className="lg:grid grid-cols-3 gap-4 py-10 border-b">
-        <span className="text-gray-900 lg:mr-0 mr-2">(2)</span>
-          <span className="text-gray-900">
+        <span className="md:text-md text-xl font-bold md:font-medium text-gray-900 lg:mr-0 mr-2">(2)</span>
+          <span className="text-gray-900 md:text-md text-xl font-bold md:font-medium ">
           Process and Systems</span>
           <p className="text-gray-500 lg:mt-0 mt-3">
           Process and Systems optimizes your lead management through advanced phone technology and digital systems. Risk Management ensures security, while Comprehensive Reporting provides clear insights. The service also includes Full Automation and AI-Friendly technology, streamlining workflows and boosting efficiency.          </p>
         </div>
         <div className="lg:grid grid-cols-3 gap-4 py-10 border-b">
-        <span className="text-gray-900 lg:mr-0 mr-2">(3)</span>
-          <span className="text-gray-900">
+        <span className="md:text-md text-xl font-bold md:font-medium text-gray-900 lg:mr-0 mr-2">(3)</span>
+          <span className="md:text-md text-xl font-bold md:font-medium text-gray-900">
           Promotion and Marketing</span>
           <p className="text-gray-500 lg:mt-0 mt-3">
           Promotion and Marketing includes everything from Staging and Photography to Website Design and Social Media. You get Engaging Content that drives Organic Traffic, along with Event Planning and Traditional Marketing, ensuring a comprehensive approach to promoting your project.          </p>
         </div>
         <div className="lg:grid grid-cols-3 gap-4 py-10 border-b">
-        <span className="text-gray-900 lg:mr-0 mr-2">(4)</span>
-          <span className="text-gray-900">
+        <span className="md:text-md text-xl font-bold md:font-medium text-gray-900 lg:mr-0 mr-2">(4)</span>
+          <span className="md:text-md text-xl font-bold md:font-medium text-gray-900">
           On Site Agents</span>
           <p className="text-gray-500 lg:mt-0 mt-3">
           On site sales teams to complement each unique project Meticulously trained to surpass both your and your customers&apos; expectations. Specializing in high-volume sales, our agents guarantee dynamic engagement to drive impressive conversion rates.          </p>
         </div>
         <div className="lg:grid grid-cols-3 gap-4 py-10 border-b">
-        <span className="text-gray-900 lg:mr-0 mr-2">(5)</span>
-          <span className="text-gray-900">
+        <span className="md:text-md text-xl font-bold md:font-medium text-gray-900 lg:mr-0 mr-2">(5)</span>
+          <span className="md:text-md text-xl font-bold md:font-medium text-gray-900">
           Reporting and Analysis</span>
           <p className="text-gray-500 lg:mt-0 mt-3">
           You gain clear insights that guide your decisions through comprehensive data tracking and in-depth analysis. Real-time reports and customized metrics allow you to understand performance and seize new opportunities. Stay ahead of trends, manage risks, and optimize results with a solution designed to keep your project on course.          </p>
@@ -219,7 +219,7 @@ Learn more
 
       <section id="experience" className="flex flex-col justify-center md:py-20 py-12 border-b">
       <span className="text-gray-500 mb-3">Our Experience</span>
-      <h2 className="font-heading dot-end  mb-6 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight mb-20">We possess the experience essential for achieving unparalleled sales and lease-up outcomes</h2>
+      <h2 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">We possess the experience essential for achieving unparalleled sales and lease-up outcomes</h2>
         <div className="lg:grid flex flex-col grid-cols-3 gap-8 lg:gap-16">
           
   <div className="lg:order-first order-last">
@@ -239,7 +239,7 @@ Learn more
     loading="lazy"
   />
 </div>
-    <p className="text-gray-500">Iconic Projects specializes in rapid project sales and leasing, with a proven track record of success. Our team is composed of industry veterans, marketing experts, tech innovators, and sales professionals, all dedicated to delivering exceptional results. We harness advanced technology, data-driven insights, and strategic planning to drive your projects forward. Whether it&apos;s market research, on-site sales teams or comprehensive marketing campaigns, our expertise ensures that your project stands out and succeeds. Trust us to bring vision, innovation, and unparalleled execution to every endeavor.</p>
+    <p className="text-gray-500">Iconic Projects specializes in rapid project sales and leasing, with a proven track record of success.<br></br><br></br> Our team is composed of industry veterans, marketing experts, tech innovators, and sales professionals, all dedicated to delivering exceptional results. <br></br>We harness advanced technology, data-driven insights, and strategic planning to drive your projects forward. <br></br><br></br>Whether it&apos;s market research, on-site sales teams or comprehensive marketing campaigns, our expertise ensures that your project stands out and succeeds. <br></br><br></br>Trust us to bring vision, innovation, and unparalleled execution to every endeavor.</p>
 </div>
       </section>
 
@@ -247,7 +247,7 @@ Learn more
       <div className="lg:grid grid-cols-3 gap-16">
         <span className="text-gray-500">Our Team</span>
         <div className="col-span-2 md:mt-0 mt-3">
-          <h2 className="font-heading  dot-end md:mb-16 mb-10 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+          <h2 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
             We consist of marketing specialists, tech innovators, sales executives, and construction professionals who consistently deliver outstanding results for our clients
           </h2>
           <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 lg:gap-10 mb-16">
@@ -385,8 +385,8 @@ Learn more
       <section id="posts" className="flex flex-col justify-center lg:pt-20 pt-12">
       <div className="lg:grid grid-cols-3 gap-4 border-b pb-20">
         <span className="text-gray-500">Latest Posts</span>
-        <div className="col-span-2">
-          <h2 className="font-heading dot-end mb-10 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+        <div className="col-span-2 mt-3 md:mt-0">
+          <h2 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium">
             Our articles offer you insights, tips, and industry trends to keep you informed and ahead of the curve
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

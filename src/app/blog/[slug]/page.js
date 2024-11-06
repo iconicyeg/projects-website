@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }) {
             </div>
           )}
 
-          <h1 className="font-heading dot-end md:mb-6 mb-3 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">{title}</h1>
+          <h1 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium">{title}</h1>
           <p className="text-gray-600 md:mb-6 mb-3 flex items-center space-x-2 flex-wrap">
             <span className="md:text-sm text-xs font-medium text-gray-500 flex items-center">
               Published on {new Date(publishDate).toLocaleDateString('en-US', {

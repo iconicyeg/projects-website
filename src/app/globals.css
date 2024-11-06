@@ -2,13 +2,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Red+Hat+Display:wght@600&display=swap');
+@import "@fontsource/lato/400.css";  /* Regular weight */
+@import "@fontsource/lato/700.css";  /* Bold weight */
+@import "@fontsource/red-hat-display/600.css";  /* SemiBold weight */
+@import "@fontsource/red-hat-display/700.css";  /* SemiBold weight */
 
 @import "swiper/swiper-bundle.css";
+
+body {
+  font-family: 'Lato', sans-serif;
+}
 
 h1, h2, h3 {
   font-family: 'Red Hat Display', sans-serif;
 }
+
 .dot-end:after {
   content: ".";
   color: #f2684c;

@@ -44,7 +44,7 @@ export default function BlogPage() {
           <div className="lg:grid grid-cols-3 gap-4">
             <span className="text-gray-500">Our Blog</span>
             <div className="col-span-2">
-              <h1 className="font-heading dot-end mt-3 lg:mt-0 mb-10 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
+              <h1 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium">
                 Our articles offer you insights, tips, and industry trends to keep you informed and ahead of the curve
               </h1>
 
