@@ -6,7 +6,7 @@ import { fetchBlogPosts, fetchBlogPostBySlug } from '../../../lib/contentful';
 
 // SEO metadata function
 export async function generateMetadata({ params }) {
-  const { slug } = await params; // Await params to resolve
+  const { slug } = await params;  // Await params to resolve
   const post = await fetchBlogPostBySlug(slug);
 
   if (!post) {
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
   const { title, excerpt, publishDate, coverImage } = post.fields;
   const coverImageUrl = coverImage?.fields?.file?.url
     ? `https:${coverImage.fields.file.url}?w=800&h=600&fm=webp&q=75`
-    : 'https://iconicprojects.ca/default-image.webp';
+    : 'https://iconicprojects.ca/hero-image.webp';
 
   return {
     title: `${title} - Iconic Projects`,
@@ -44,15 +44,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// Static params generation
-export async function generateStaticParams() {
-  const posts = await fetchBlogPosts();
-  return posts.map((post) => ({ slug: post.fields.slug }));
-}
-
 // Blog Post Page Component
 export default async function BlogPostPage({ params }) {
-  const { slug } = await params; // Await params here as well
+  const { slug } = await params;  // Await params here as well
   const post = await fetchBlogPostBySlug(slug);
 
   if (!post) {
@@ -63,7 +57,7 @@ export default async function BlogPostPage({ params }) {
   const { title, content, coverImage, tags, publishDate, author, excerpt } = post.fields;
   const coverImageUrl = coverImage?.fields?.file?.url
     ? `https:${coverImage.fields.file.url}?w=1200&h=800&fm=webp&q=75`
-    : 'https://iconicprojects.ca/default-image.webp';
+    : 'https://iconicprojects.ca/hero-image.webp';
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -95,14 +89,14 @@ export default async function BlogPostPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       
-      <article className="max-w-4xl mx-auto py-20 px-4">
+      <article className="pt-16">
         <div className="border-b pb-20">
           {tags?.length > 0 && (
-            <div className="mb-4 flex flex-wrap gap-2">
+            <div className="mb-2">
               {tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="inline-block bg-gray-200 text-gray-700 text-xs font-medium px-3 py-1 rounded"
+                  className="inline-block border bg-white rounded px-2 py-1 text-xs text-gray-700 mr-2 mb-3"
                 >
                   {tag}
                 </span>
@@ -110,14 +104,17 @@ export default async function BlogPostPage({ params }) {
             </div>
           )}
 
-          <h1 className="text-4xl font-bold mt-8 mb-4">{title}</h1>
-          <p className="text-gray-600 mb-6">
-            Published on{' '}
-            {new Date(publishDate).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
+          <h1 className="font-heading dot-end mb-6 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">{title}</h1>
+          <p className="text-gray-600 mb-6 flex items-center space-x-2">
+            <span className="text-sm font-medium text-gray-500 flex items-center">
+              Published on {new Date(publishDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </span>
+            <span className="mx-2 text-gray-400">|</span>
+            <span className="text-sm font-medium text-gray-500">by {author}</span>
           </p>
 
           {coverImageUrl && (
@@ -133,7 +130,7 @@ export default async function BlogPostPage({ params }) {
             </div>
           )}
 
-          <div className="prose prose-lg max-w-full text-gray-700">
+          <div className="text-gray-700 post-content prose lg:prose-xl max-w-5xl">
             {content && documentToReactComponents(content)}
           </div>
         </div>

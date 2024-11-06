@@ -1,8 +1,6 @@
 // lib/contentful.js
 import { createClient } from 'contentful';
 
-console.log('Contentful Space ID:', process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID);
-console.log('Contentful Access Token:', process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN);
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,

@@ -121,7 +121,30 @@ export default function ServicesPage() {
         <meta name="twitter:image" content={metadata.twitter.images[0]} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              name: "Leasing, Marketing & Property Management",
+              provider: {
+                "@type": "Organization",
+                name: "Iconic Projects",
+                url: "https://iconicprojects.ca",
+              },
+              serviceType: [
+                "Market Research",
+                "Property Leasing",
+                "Marketing Strategies",
+                "Automated Leasing Systems",
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                bestRating: "5",
+                ratingCount: "22",
+              },
+            }),
+          }}
         />
       </Head>
 

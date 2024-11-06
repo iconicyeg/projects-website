@@ -49,6 +49,7 @@ export default function BlogPage() {
                               src={`https:${post.fields.coverImage.fields.file.url}?w=400&h=300&fm=webp&q=75`}
                               alt={post.fields.coverImage.fields.title || post.fields.title}
                               fill
+                              loading="lazy"
                               className="object-cover saturate-25 group-hover:saturate-75 group-hover:scale-110 ease-in-out duration-200"
                             />
                           </div>
@@ -83,8 +84,9 @@ export default function BlogPage() {
                   <button
                     onClick={loadMorePosts}
                     className="inline-flex justify-center rounded-full py-2 px-5 text-slate-900 bg-gray-200 hover:bg-gray-300"
+                    aria-label="Load more blog posts"
                   >
-                    View More
+                    Load More
                   </button>
                 )}
               </div>

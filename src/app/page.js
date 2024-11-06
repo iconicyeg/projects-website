@@ -40,29 +40,47 @@ export default async function HomePage() {
   return (
     <>
     <Head>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Iconic Projects",
-            url: "https://iconicprojects.ca",
-            logo: "https://iconicprojects.ca/logo.webp",
-            sameAs: [
-              "https://www.facebook.com/iconicprojects",
-              "https://twitter.com/iconicprojects",
-              "https://www.linkedin.com/company/iconicprojects"
-            ],
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+1-555-555-5555",
-              contactType: "Customer Service",
-            },
-          }),
-        }}
-      />
-    </Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta property="og:description" content={metadata.openGraph.description} />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:site_name" content={metadata.openGraph.siteName} />
+        <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        <meta property="twitter:card" content={metadata.twitter.card} />
+        <meta property="twitter:title" content={metadata.twitter.title} />
+        <meta property="twitter:description" content={metadata.twitter.description} />
+        <meta property="twitter:image" content={metadata.twitter.images[0]} />
+
+        {/* Schema for Organization and AggregateRating */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Iconic Projects",
+              url: "https://iconicprojects.ca",
+              logo: "https://iconicprojects.ca/logo.webp",
+              sameAs: [
+                "https://www.linkedin.com/company/iconicprojects",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+1-587-336-3176",
+                contactType: "Customer Service",
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+                ratingCount: "22",
+              },
+            }),
+          }}
+        />
+      </Head>
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section id="hero" className="flex flex-col justify-center py-20 border-b">
