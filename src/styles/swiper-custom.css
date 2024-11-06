@@ -1,0 +1,26 @@
+/* styles/swiper-custom.css */
+
+/* Customize the pagination bullets to look like dashes */
+.swiper-pagination-bullet {
+    width: 8px; /* Length of the dash */
+    height: 8px; /* Thickness of the dash */
+    border-radius: 50px; /* Rounding the corners */
+    background: black; /* Set the color to black */
+    opacity: 0.1; /* Less opaque for inactive bullets */
+    margin: 0 4px; /* Spacing between bullets */
+    transition-duration: .2s;
+  }
+  
+  /* Style the active bullet */
+  .swiper-pagination-bullet-active {
+    width: 32px; /* Length of the dash */
+    opacity: 0.3; /* Fully opaque for active bullet */
+  }
+  
+  /* Adjust the pagination container */
+  .swiper-pagination {
+    position: relative; /* Change from absolute to relative */
+    margin-top: 40px; /* Add spacing above pagination */
+    display: flex;
+    justify-content: center; /* Center the pagination */
+  }
