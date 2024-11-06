@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
-import { fetchBlogPosts, fetchBlogPostBySlug } from '../../../lib/contentful';
+import { fetchBlogPostBySlug } from '../../../lib/contentful';
 
 // SEO metadata function
 export async function generateMetadata({ params }) {
-  const { slug } = await params;  // Await params to resolve
+  const { slug } = await params; // Await params to resolve
   const post = await fetchBlogPostBySlug(slug);
 
   if (!post) {
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }) {
 
 // Blog Post Page Component
 export default async function BlogPostPage({ params }) {
-  const { slug } = await params;  // Await params here as well
+  const { slug } = await params; // Await params here as well
   const post = await fetchBlogPostBySlug(slug);
 
   if (!post) {
@@ -81,6 +82,27 @@ export default async function BlogPostPage({ params }) {
     description: excerpt || '',
   };
 
+  const options = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { file, title } = node.data.target.fields;
+        const imageUrl = `https:${file.url}?w=800&h=600&fm=webp&q=75`;
+
+        return (
+          <div className="relative w-full h-80 my-6">
+            <Image
+              src={imageUrl}
+              alt={title || 'Embedded Image'}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg"
+            />
+          </div>
+        );
+      },
+    },
+  };
+
   return (
     <>
       <Script
@@ -104,7 +126,7 @@ export default async function BlogPostPage({ params }) {
             </div>
           )}
 
-          <h1 className="font-heading dot-end  md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium">{title}</h1>
+          <h1 className="font-heading dot-end md:mb-8 mb-4 text-3xl md:text-4xl lg:text-5xl font-medium">{title}</h1>
           <p className="text-gray-600 md:mb-6 mb-3 flex items-center space-x-2 flex-wrap">
             <span className="md:text-sm text-xs font-medium text-gray-500 flex items-center">
               Published on {new Date(publishDate).toLocaleDateString('en-US', {
@@ -131,7 +153,7 @@ export default async function BlogPostPage({ params }) {
           )}
 
           <div className="text-gray-900 post-content prose lg:prose-xl max-w-5xl">
-            {content && documentToReactComponents(content)}
+            {content && documentToReactComponents(content, options)}
           </div>
         </div>
       </article>

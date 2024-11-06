@@ -81,7 +81,9 @@ bottom: 10px;
 }
 
 .post-content p{
-margin-bottom: 18px;
+margin-bottom: 24px;
+font-size: 18px;
+line-height: 1.7;
 
 }
 
@@ -103,18 +105,19 @@ ol {
 }
 .post-content h2 {
   font-family: 'Red Hat Display', sans-serif;
-  font-size: 22px;
+  font-size: 26px;
   line-height: 1.2;
-  font-weight: 500;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin: 20px 0px;
+  text-transform: uppercase;
 }
 
 .post-content h3 {
   font-family: 'Red Hat Display', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.2;
-  font-weight: 500;
-  margin-bottom: 18px;
+  font-weight: 700;
+  margin: 20px 0px;
 }
 
 .post-content h4 {
