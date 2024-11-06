@@ -16,9 +16,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>Iconic Projects</title>
-        <meta name="description" content="Iconic Projects" />
-
         {/* Favicons and Icons */}
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
