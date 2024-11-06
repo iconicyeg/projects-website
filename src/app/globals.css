@@ -6,10 +6,9 @@
 
 @import "swiper/swiper-bundle.css";
 
-body {
-  font-family: Arial, sans-serif;
+h1, h2, h3 {
+  font-family: 'Red Hat Display', sans-serif;
 }
-
 .dot-end:after {
   content: ".";
   color: #f2684c;
@@ -33,6 +32,8 @@ position: relative;
 height: 22px;
 width: 44px;
 }
+
+
 
 .bar {
 width: 100%;
@@ -176,4 +177,17 @@ padding-left: 18px;
   100% {
     left: 100%;
   }
+}
+
+@media (max-width:768px){
+  .open-nav {
+    height: 18px;
+    width: 36px;
+    }
+    .navigation-active #bar2 {
+      bottom: 6px;
+  }
+  .navigation-active main {
+    padding: 0 24px;
+    }
 }

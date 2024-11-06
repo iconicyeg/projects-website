@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ProjectCarousel from '../components/ProjectCarousel';
+import dynamic from 'next/dynamic';
 import { fetchBlogPosts } from '../lib/contentful';
-import Head from 'next/head';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Expert Property Leasing Solutions in Edmonton | Iconic Projects',
@@ -32,58 +32,51 @@ export const metadata = {
   },
 };
 
+const ProjectCarousel = dynamic(() => import('../components/ProjectCarousel'));
+
 export default async function HomePage() {
   const latestPosts = await fetchBlogPosts(4);
 
-  
-
   return (
     <>
-    <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta property="og:title" content={metadata.openGraph.title} />
-        <meta property="og:description" content={metadata.openGraph.description} />
-        <meta property="og:url" content={metadata.openGraph.url} />
-        <meta property="og:site_name" content={metadata.openGraph.siteName} />
-        <meta property="og:image" content={metadata.openGraph.images[0].url} />
-        <meta property="twitter:card" content={metadata.twitter.card} />
-        <meta property="twitter:title" content={metadata.twitter.title} />
-        <meta property="twitter:description" content={metadata.twitter.description} />
-        <meta property="twitter:image" content={metadata.twitter.images[0]} />
-
-        {/* Schema for Organization and AggregateRating */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Iconic Projects",
-              url: "https://iconicprojects.ca",
-              logo: "https://iconicprojects.ca/logo.webp",
-              sameAs: [
-                "https://www.linkedin.com/company/iconicprojects",
-              ],
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+1-587-336-3176",
-                contactType: "Customer Service",
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5",
-                bestRating: "5",
-                worstRating: "1",
-                ratingCount: "22",
-              },
-            }),
-          }}
-        />
-      </Head>
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section id="hero" className="flex flex-col justify-center py-20 border-b">
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Iconic Projects",
+            url: "https://iconicprojects.ca",
+            logo: "https://iconicprojects.ca/logo.webp",
+            sameAs: ["https://www.linkedin.com/company/iconicprojects"],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+1-587-336-3176",
+              contactType: "Customer Service",
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5",
+              bestRating: "5",
+              worstRating: "1",
+              ratingCount: "22",
+            },
+            video: {
+              "@type": "VideoObject",
+              embedUrl: "https://player.vimeo.com/video/1023386914?autoplay=1&muted=1&loop=1",
+              thumbnailUrl: "https://i.vimeocdn.com/video/thumbnail.jpg",
+              name: "Iconic Walk Video",
+              description: "Showcasing our expertise and project successes.",
+              duration: "PT14S",
+              uploadDate: "2024-10-25T14:57:32-04:00",
+            }
+          }),
+        }}
+      />
+      <div className="flex flex-col min-h-screen">
+        {/* Hero Section */}
+      <section id="hero" className="flex flex-col justify-center md:py-20 py-12 border-b">
         <h1 className="font-heading text-2xl lg:text-6xl font-medium text-gray-900 mb-6 leading-tight dot-end">
           Discover your project&apos;s potential and redefine the standards of industry expectations
         </h1>
@@ -101,12 +94,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section id="projects" className="flex flex-col justify-center py-20 border-b">
+      <section id="projects" className="flex flex-col justify-center md:py-20 py-12 border-b">
         <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-medium text-gray-900 mb-8 dot-end">Projects</h2>
         <ProjectCarousel />
       </section>
       
-      <section id="aboutus" className="flex flex-col justify-center py-20 border-b">
+      <section id="aboutus" className="flex flex-col justify-center md:py-20 py-12 border-b">
         <div className="lg:grid grid-cols-3 gap-4">
   <span className="text-gray-500">About us</span>
   <div className="col-span-2 lg:mt-0 mt-4">
@@ -133,7 +126,7 @@ export default async function HomePage() {
           alt="Edmonton"
           layout="fill"
           className="object-cover"
-          priority
+          loading="lazy"
         />
       </div>
     </div>
@@ -160,7 +153,7 @@ Learn more
     </div>
 </div>
       </section>
-      <section id="services" className="flex flex-col justify-center pt-20">
+      <section id="services" className="flex flex-col justify-center lg:pt-20 pt-12">
         <div className="lg:grid grid-cols-12 gap-4 lg:mb-12">
           <div className="col-span-4"><span className="text-gray-500">Services</span></div>
           <div className="col-span-8">
@@ -206,7 +199,7 @@ Learn more
 
         <div className="grid grid-cols-12 gap-4 mb-12 mt-12">
           <div className="col-span-4 hidden lg:block"></div>
-          <div className="col-span-8">
+          <div className="col-span-12 md:col-span-8">
           <div className="flex gap-3">
     <Link
             href="/contact"
@@ -224,7 +217,7 @@ Learn more
         </div>
       </section>
 
-      <section id="experience" className="flex flex-col justify-center py-20 border-b">
+      <section id="experience" className="flex flex-col justify-center md:py-20 py-12 border-b">
       <span className="text-gray-500 mb-3">Our Experience</span>
       <h2 className="font-heading dot-end  mb-6 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight mb-20">We possess the experience essential for achieving unparalleled sales and lease-up outcomes</h2>
         <div className="lg:grid flex flex-col grid-cols-3 gap-8 lg:gap-16">
@@ -237,27 +230,27 @@ Learn more
             Get in touch
           </Link>
   </div>
-  <div className="relative w-full h-[460px]">
+  <div className="relative w-full md:h-[460px] h-[300px]">
   <Image
     src="/experience.webp"
     alt="Experience Image"
     layout="fill"
     className="object-cover"
-    priority
+    loading="lazy"
   />
 </div>
     <p className="text-gray-500">Iconic Projects specializes in rapid project sales and leasing, with a proven track record of success. Our team is composed of industry veterans, marketing experts, tech innovators, and sales professionals, all dedicated to delivering exceptional results. We harness advanced technology, data-driven insights, and strategic planning to drive your projects forward. Whether it&apos;s market research, on-site sales teams or comprehensive marketing campaigns, our expertise ensures that your project stands out and succeeds. Trust us to bring vision, innovation, and unparalleled execution to every endeavor.</p>
 </div>
       </section>
 
-      <section id="ourteam" className="flex flex-col justify-center py-20 border-b">
+      <section id="ourteam" className="flex flex-col justify-center md:py-20 py-12 border-b">
       <div className="lg:grid grid-cols-3 gap-16">
         <span className="text-gray-500">Our Team</span>
         <div className="col-span-2">
           <h2 className="font-heading  dot-end mb-16 text-2xl md:text-4xl lg:text-5xl font-medium leading-tight">
             We consist of marketing specialists, tech innovators, sales executives, and construction professionals who consistently deliver outstanding results for our clients
           </h2>
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-10 mb-16">
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 lg:gap-10 mb-16">
             
             {/* Team Member 1 */}
             <div>
@@ -265,6 +258,7 @@ Learn more
                 <Image
                   src="/team/caitlin.webp"
                   alt="Caitlin Jane Heine"
+                  loading="lazy"
                   width={200}
                   height={200}
                   className="object-cover"
@@ -281,6 +275,7 @@ Learn more
                 <Image
                   src="/team/michael.webp"
                   alt="Michael van Buteselaar"
+                  loading="lazy"
                   width={200}
                   height={200}
                   className="object-cover"
@@ -297,6 +292,7 @@ Learn more
                 <Image
                   src="/team/ludo.webp"
                   alt="Ludovic Aubertin"
+                  loading="lazy"
                   width={200}
                   height={200}
                   className="object-cover"
@@ -313,6 +309,7 @@ Learn more
                 <Image
                   src="/team/dmytro.webp"
                   alt="Dmytro Lavryshyn"
+                  loading="lazy"
                   width={200}
                   height={200}
                   className="object-cover"
@@ -329,6 +326,7 @@ Learn more
                 <Image
                   src="/team/olena.webp"
                   alt="Olena Dziuba"
+                  loading="lazy"
                   width={200}
                   height={200}
                   className="object-cover"
@@ -345,6 +343,7 @@ Learn more
                 <Image
                   src="/team/sarah.webp"
                   alt="Sarah Picco"
+                  loading="lazy"
                   width={200}
                   height={200}
                   className="object-cover"
@@ -361,6 +360,7 @@ Learn more
                 <Image
                   src="/team/max.webp"
                   alt="Max Pryimak"
+                  loading="lazy"
                   width={200}
                   height={200}
                   className="object-cover"
@@ -382,7 +382,7 @@ Learn more
       </div>
     </section>
 
-      <section id="posts" className="flex flex-col justify-center pt-20">
+      <section id="posts" className="flex flex-col justify-center lg:pt-20 pt-12">
       <div className="lg:grid grid-cols-3 gap-4 border-b pb-20">
         <span className="text-gray-500">Latest Posts</span>
         <div className="col-span-2">
@@ -400,6 +400,7 @@ Learn more
               src={`https:${post.fields.coverImage.fields.file.url}?w=400&h=300&fm=webp&q=75`}
               alt={post.fields.coverImage.fields.title || post.fields.title}
               fill
+              loading="lazy"
               className="object-cover saturate-25 group-hover:saturate-75 group-hover:scale-110 ease-in-out duration-200"
             />
           </div>

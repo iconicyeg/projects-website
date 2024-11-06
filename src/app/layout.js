@@ -24,13 +24,13 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen flex flex-col bg-gray-100 font-body">
         <Header />
         <main className="flex-grow transition-all duration-300">
-          <div className="bg-white px-8">
+          <div className="bg-white md:px-8 px-4">
             <AnimatedLayout>{children}</AnimatedLayout>
           </div>
            {/* Contact Section */}
       <section
         id="contacts"
-        className="px-8 shadow-md mb-8 bg-white rounded-b-3xl flex flex-col justify-center py-20 border-b"
+        className="md:px-8 px-4 shadow-md mb-8 bg-white rounded-b-3xl flex flex-col justify-center md:py-20 py-12 border-b"
       >
         <div className="lg:grid grid-cols-3 gap-20">
           <div className="mb-16 lg:mb-0">

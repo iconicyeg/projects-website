@@ -149,7 +149,7 @@ export default function ServicesPage() {
       </Head>
 
       <main className="flex flex-col min-h-screen">
-        <section id="services" className="ul-styled flex flex-col justify-center pt-20">
+        <section id="services" className="ul-styled flex flex-col justify-center lg:pt-20 pt-12">
           <div className="lg:grid grid-cols-12 gap-4 mb-12">
             <div className="col-span-4">
               <span className="text-gray-500">Services</span>
@@ -167,7 +167,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section id="aboutus" className="ul-styled flex flex-col justify-center pt-20">
+        <section id="aboutus" className="ul-styled flex flex-col justify-center lg:pt-20 pt-12">
           <div className="lg:grid grid-cols-3 gap-4 border-b pb-20">
             <span className="text-gray-500">About us</span>
             <div className="col-span-2">

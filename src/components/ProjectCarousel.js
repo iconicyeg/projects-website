@@ -69,7 +69,7 @@ export default function ProjectsCarousel() {
                     />
                   </div>
                 )}
-                <div className="mt-2 flex justify-between">
+                <div className="mt-2 flex justify-between flex-wrap">
                   <p className="text-medium">{project.fields.title}</p>
                   <p className="text-medium text-gray-400">
                     {project.fields.unitsNumber} Unit Rental Building

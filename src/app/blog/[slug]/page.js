@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }) {
       name: 'Iconic Projects',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://iconicprojects.ca/logo.png',
+        url: 'https://iconicprojects.ca/logo.webp',
       },
     },
     description: excerpt || '',
@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       
-      <article className="pt-16">
+      <article className="md:pt-16 pt-10">
         <div className="border-b pb-20">
           {tags?.length > 0 && (
             <div className="mb-2">
@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }) {
           </p>
 
           {coverImageUrl && (
-            <div className="relative w-full h-96 mb-8">
+            <div className="relative w-full md:h-96 h-64 mb-8">
               <Image
                 src={coverImageUrl}
                 alt={coverImage?.fields?.title || title}

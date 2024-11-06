@@ -22,7 +22,7 @@ export default function Header() {
   }, [navOpen]);
 
   return (
-    <header className={`py-5 px-8 transition-all duration-200 ${navOpen ? '' : 'bg-white'}`}>
+    <header className={`md:py-5 md:px-8  px-4 py-3 transition-all duration-200 ${navOpen ? '' : 'bg-white'}`}>
       <div className="max-w-screen-2xl mx-auto">
         <div className="w-full mx-auto flex items-center justify-between">
           {/* Logo */}
@@ -47,7 +47,7 @@ export default function Header() {
         {navOpen && (
           <div className="navigation transition-all duration-300">
             <div className="py-10">
-              <div className="grid grid-cols-3 gap-10">
+              <div className="md:grid grid-cols-3 flex flex-col gap-10">
                 {/* Intro Text */}
                 <p className="text-gray-900">
                   We are a leading property management and leasing firm,
